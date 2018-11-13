@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#demo {
+    // EXAMPLE OF ID SELECTOR TO DISPLAY RESULT INSIDE A BOX
+    background-color: Purple;
+    width: 300px;
+    border: 25px solid black;
+    padding: 25px;
+    margin: 25px;
+    color: #2a6592
+}
+</style>
+</head>
+<body>
+<h1>Math Puzzle</h1>
+
+<form>
+  Question 1<br><br>
+  What are the next number in the following sequence?<br>
+  77, 143, 221, 323, 437<br><br>
+  Answer:<br>
+  <input type="text" id="answer1">
+  <br><br>
+  Question 2<br><br>
+  1 + 4 = 5<br>
+  2 + 5 = 12<br>
+  3 + 6 = 21<br>
+  8 + 11 = ?<br><br>
+  Answer:<br>
+  <input type="text" id="answer2">
+  <br><br>
+  <button type="button" onclick="myFunction()">Submit</button>
+</form>
+
+<br><br>
+<div id="demo"></div>
+
+<script>
+// JAVASCRIPT FUNCTION THAT IS CALLED BY SUBMIT BUTTON
+function myFunction() {
+    var score = 0, text;
+
+    // Get the value of the input field with id="answer1"
+    x = document.getElementById("answer1").value;
+    // Our answer is 667 so we check here for that
+    if (x == 667) {
+        score = score + 1;
+    } else {
+        // do nothing
+    }
+
+    // Get the value of the input field with id="answer2"
+    x = document.getElementById("answer2").value;
+
+    // Our answer is 667 so we check here for that
+    if (x == 96) {
+        score = score + 1;
+    } else {
+        // do nothing
+    }
+
+    // Display output
+    if(score == 2) {
+	text = "You answered everything correctly! Congrats!"
+    } else {
+	text = "Your score was " + score + "/2. Better luck next time!"
+    }
+    document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
